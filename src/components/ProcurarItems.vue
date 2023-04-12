@@ -1,0 +1,55 @@
+<template>
+  <v-container fluid>
+    <v-row align="center">
+      <v-col cols="12" sm="6" md="3">
+        <v-text-field class="procurar" label="Procurar" outlined></v-text-field>
+      </v-col>
+
+      <v-col class="d-flex" left cols="12" sm="3">
+        Ordernar por:
+        <v-select :items="items" label="Desconto" dense solo></v-select>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+export default {
+  name: "ProcurarItems",
+  data: () => ({
+    items: ["Foo", "Bar", "Fizz", "Buzz"],
+  }),
+};
+</script>
+
+<style scoped>
+.d-flex {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: right;
+
+  color: #ffffff;
+}
+.procurar {
+  background: #0b1641;
+  border-radius: 8px;
+}
+.desconto {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  background: #0b1641;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+</style>
