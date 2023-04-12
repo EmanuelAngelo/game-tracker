@@ -14,9 +14,9 @@
 
 <script>
 export default {
-  name: "ProcurarItems",
+  name: "ProcurarDescontos",
   data: () => ({
-    items: ["Foo", "Bar", "Fizz", "Buzz"],
+    items: ["% de Desconto", "Menor preço", "Maior preço", "Título"],
   }),
 };
 </script>

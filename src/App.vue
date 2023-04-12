@@ -12,11 +12,21 @@
             <template>
               <v-col :key="n" class="mt-2" cols="12" style="color: aliceblue">
                 <strong>Ofertas</strong>
-                <ProcurarItems />
+                <ProcurarDescontos />
               </v-col>
               <v-col v-for="j in 12" :key="`${n}${j}`" cols="6" md="2">
                 <v-sheet class="itemsImg" height="150"> Teste </v-sheet>
               </v-col>
+              <v-row align="center" justify="center">
+                <v-btn
+                  class="ma-3"
+                  :loading="loading"
+                  :disabled="loading"
+                  color="secondary"
+                  @click="loader = 'loading'"
+                  >Carregar mais
+                </v-btn>
+              </v-row>
             </template>
           </v-row>
         </v-container>
@@ -29,10 +39,24 @@
 <script>
 import FooterTracker from "./components/FooterTracker.vue";
 import NavBar from "./components/NavBar.vue";
-import ProcurarItems from "./components/ProcurarItems.vue";
+import ProcurarDescontos from "./components/ProcurarDescontos.vue";
+
 export default {
-  data: () => ({ drawer: null }),
-  components: { NavBar, ProcurarItems, FooterTracker },
+  data: () => ({
+    drawer: null,
+  }),
+  watch: {
+    loader() {
+      const l = this.loader;
+      this[l] = !this[l];
+
+      setTimeout(() => (this[l] = false), 3000);
+
+      this.loader = null;
+    },
+  },
+
+  components: { NavBar, ProcurarDescontos, FooterTracker },
 };
 </script>
 <style scoped>
@@ -50,5 +74,42 @@ export default {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   color: aliceblue;
+}
+
+.custom-loader {
+  animation: loader 1s infinite;
+  display: flex;
+}
+@-moz-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>
