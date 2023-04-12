@@ -1,12 +1,11 @@
 <template>
   <v-container fluid>
-    <v-row align="center">
-      <v-col cols="12" sm="6" md="3">
+    <v-row align="center" justify="space-between">
+      <v-col cols="12" sm="3" md="3">
         <v-text-field class="procurar" label="Procurar" outlined></v-text-field>
       </v-col>
 
-      <v-col class="d-flex" left cols="12" sm="3">
-        Ordernar por:
+      <v-col class="d-flex" cols="12" sm="2">
         <v-select :items="items" label="Desconto" dense solo></v-select>
       </v-col>
     </v-row>
@@ -23,6 +22,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
 .d-flex {
   font-family: "Roboto";
   font-style: normal;
@@ -30,24 +30,27 @@ export default {
   font-size: 18px;
   line-height: 21px;
   /* identical to box height */
-
   display: flex;
   align-items: center;
   text-align: right;
-
   color: #ffffff;
 }
 .procurar {
   background: #0b1641;
   border-radius: 8px;
+  width: 380px;
+  height: 55px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+  color: #ffffff !important;
 }
 .desconto {
   position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-
   background: #0b1641;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;

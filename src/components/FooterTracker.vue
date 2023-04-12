@@ -1,0 +1,51 @@
+<template>
+  <v-footer dark padless>
+    <v-card flat tile class="lighten-1 white--text text-center">
+      <v-card-text>
+        <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
+          <v-icon size="24px">
+            {{ icon }}
+          </v-icon>
+        </v-btn>
+      </v-card-text>
+
+      <v-card-text class="white--text pt-0">
+        © 2023, Game Tracker Inc. Todos os direitos reservados. Nulla facilisi.
+        Etiam sagittis congue tempor. Pellentesque habitant morbi tristique
+        senectus et netus et malesuada fames ac turpis egestas. Suspendisse eu
+        velit et ante luctus egestas. Aenean sed nisi tellus. Duis non ornare
+        libero. Quisque suscipit maximus nisi, in gravida felis. Cras ornare
+        mauris ac nisi congue, ut condimentum sem tincidunt. Phasellus semper
+        tellus malesuada turpis gravida cursus. Duis nec eleifend nunc, vitae
+        finibus elit. Aliquam eget diam vitae purus suscipit viverra.
+      </v-card-text>
+
+      <v-divider></v-divider>
+
+      <v-card-text class="white--text">
+        {{ new Date().getFullYear() }} — <strong>Emanuel Angelo</strong>
+      </v-card-text>
+    </v-card>
+  </v-footer>
+</template>
+
+<script>
+export default {
+  name: "FooterTracker",
+  data: () => ({
+    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+  }),
+};
+</script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+.white--text {
+  font-family: "Roboto" !important;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 180%;
+  /* or 25px */
+}
+</style>

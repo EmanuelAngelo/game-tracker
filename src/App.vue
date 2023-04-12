@@ -10,28 +10,29 @@
         <v-container>
           <v-row>
             <template>
-              <v-col :key="n" class="mt-2" cols="12">
+              <v-col :key="n" class="mt-2" cols="12" style="color: aliceblue">
                 <strong>Ofertas</strong>
                 <ProcurarItems />
               </v-col>
-
-              <v-col v-for="j in 3" :key="`${n}${j}`" cols="6" md="2">
-                <v-sheet height="150"> </v-sheet>
+              <v-col v-for="j in 12" :key="`${n}${j}`" cols="6" md="2">
+                <v-sheet class="itemsImg" height="150"> Teste </v-sheet>
               </v-col>
             </template>
           </v-row>
         </v-container>
       </v-main>
+      <FooterTracker />
     </v-app>
   </div>
 </template>
 
 <script>
+import FooterTracker from "./components/FooterTracker.vue";
 import NavBar from "./components/NavBar.vue";
 import ProcurarItems from "./components/ProcurarItems.vue";
 export default {
   data: () => ({ drawer: null }),
-  components: { NavBar, ProcurarItems },
+  components: { NavBar, ProcurarItems, FooterTracker },
 };
 </script>
 <style scoped>
@@ -43,5 +44,11 @@ export default {
   font-weight: 300;
   font-size: 36px;
   line-height: 42px;
+}
+.itemsImg {
+  background: #0b1641;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  color: aliceblue;
 }
 </style>
