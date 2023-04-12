@@ -17,9 +17,10 @@
               <v-col v-for="j in 12" :key="`${n}${j}`" cols="6" md="2">
                 <v-sheet class="itemsImg" height="150"> Teste </v-sheet>
               </v-col>
-              <v-row align="center" justify="center">
+              <v-row class="btn-margin" align="center" justify="center">
                 <v-btn
                   class="ma-3"
+                  rounded
                   :loading="loading"
                   :disabled="loading"
                   color="secondary"
@@ -42,9 +43,12 @@ import NavBar from "./components/NavBar.vue";
 import ProcurarDescontos from "./components/ProcurarDescontos.vue";
 
 export default {
-  data: () => ({
-    drawer: null,
-  }),
+  data() {
+    return {
+      loader: null,
+      loading: false,
+    };
+  },
   watch: {
     loader() {
       const l = this.loader;
@@ -74,6 +78,9 @@ export default {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   color: aliceblue;
+}
+.btn-margin {
+  margin: auto !important;
 }
 
 .custom-loader {
