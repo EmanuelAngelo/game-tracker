@@ -14,9 +14,34 @@
                 <strong>Ofertas</strong>
                 <ProcurarDescontos />
               </v-col>
-              <v-col v-for="j in 12" :key="`${n}${j}`" cols="6" md="2">
-                <v-sheet class="itemsImg" height="150"> Teste </v-sheet>
-              </v-col>
+              <v-container class="fill-height" fluid style="min-height: 434px">
+                <v-fade-transition mode="out-in">
+                  <v-row>
+                    <v-col
+                      v-for="produto of produtos"
+                      :key="produto.storeID"
+                      cols="6"
+                      md="4"
+                    >
+                      <v-card>
+                        <v-img
+                          :src="produto.thumb"
+                          max-width="380"
+                          max-height="147"
+                          class="darken-4"
+                        ></v-img>
+                        <div>
+                          <v-card-title class="text-h6">
+                            {{ produto.title }} - {{ produto.normalPrice }} -
+                            {{ produto.salePrice }}
+                          </v-card-title>
+                        </div>
+                      </v-card>
+                    </v-col>
+                  </v-row>
+                </v-fade-transition>
+              </v-container>
+              <!-- Botão carregar mais -->
               <v-row class="btn-margin" align="center" justify="center">
                 <v-btn
                   class="ma-3"
@@ -41,12 +66,14 @@
 import FooterTracker from "./components/FooterTracker.vue";
 import NavBar from "./components/NavBar.vue";
 import ProcurarDescontos from "./components/ProcurarDescontos.vue";
+import Produtos from "./services/produtos";
 
 export default {
   data() {
     return {
       loader: null,
       loading: false,
+      produtos: [],
     };
   },
   watch: {
@@ -58,6 +85,12 @@ export default {
 
       this.loader = null;
     },
+  },
+  mounted() {
+    Produtos.listar().then((resposta) => {
+      console.log(resposta.data);
+      this.produtos = resposta.data;
+    });
   },
 
   components: { NavBar, ProcurarDescontos, FooterTracker },

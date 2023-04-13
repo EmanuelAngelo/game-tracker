@@ -2,14 +2,15 @@
 
 Projeto proposto como desafio de entrevista tecnica.
 
-| :placard: O Desafio |     |
-| -------------  | --- |
-| :sparkles: Nome        | **Game Tracker**
-| :label: Tecnologias | html, css, vuejs, vuetify, javascript
-| :rocket: URL         | https://url-deploy.com.br
-| :fire: Desafio     | https://www.figma.com/file/1OChnhd0T3HQdGP1TWHNbX/Game-Tracker-Prot%C3%B3tipo?node-id=0-1&t=YAtZGbxJ1lXAsrFW-0
+| 👨🏻‍💻 O Desafio        |                                                                                                                |
+| ------------------- | -------------------------------------------------------------------------------------------------------------- |
+| :sparkles: Nome     | **Game Tracker**                                                                                               |
+| :label: Tecnologias | html, css, vuejs, vuetify, javascript                                                                          |
+| :rocket: URL        | https://url-deploy.com.br                                                                                      |
+| :fire: Desafio      | https://www.figma.com/file/1OChnhd0T3HQdGP1TWHNbX/Game-Tracker-Prot%C3%B3tipo?node-id=0-1&t=YAtZGbxJ1lXAsrFW-0 |
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
+
 ![image](https://user-images.githubusercontent.com/23459929/231747000-72849494-0a80-4c65-bbe1-ebe650151506.png#vitrinedev)
 
 ## Detalhes do projeto
