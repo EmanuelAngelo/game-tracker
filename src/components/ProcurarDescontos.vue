@@ -13,7 +13,17 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
+  setup() {
+    const search_query = ref("");
+
+    return {
+      search_query,
+    };
+  },
+
   name: "ProcurarDescontos",
   data: () => ({
     items: ["% de Desconto", "Menor preço", "Maior preço", "Título"],
