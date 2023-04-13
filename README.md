@@ -2,7 +2,7 @@
 
 Projeto proposto como desafio de entrevista tecnica.
 
-| 👨🏻‍💻 O Desafio        |                                                                                                                |
+| 👨🏻‍💻 O Desafio      |                                                                                                                |
 | ------------------- | -------------------------------------------------------------------------------------------------------------- |
 | :sparkles: Nome     | **Game Tracker**                                                                                               |
 | :label: Tecnologias | html, css, vuejs, vuetify, javascript                                                                          |
