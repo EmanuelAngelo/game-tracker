@@ -16,3 +16,10 @@ Projeto proposto como desafio de entrevista tecnica.
 ## Detalhes do projeto
 
 O desafio proposto para este projeto foi desenvolver uma loja de jogos utilizando Vue.js, HTML, CSS e JavaScript, sem limitação do uso de algum framework específico. A característica principal deste projeto é a utilização de uma API dos jogos da Steam. O projeto foi bem detalhado e organizado em seu template, com uma arquitetura clara e de fácil compreensão.
+
+## Detalhes para baixar e iniciar projeto
+
+| Command | Description |
+| --- | --- |
+| npm install | Comando para instalar as dependências do projeto |
+| npm run serve | Comando para iniciar o projeto |
