@@ -23,7 +23,7 @@
                       cols="6"
                       md="4"
                     >
-                      <v-card>
+                      <v-card class="v-card">
                         <v-img
                           :src="produto.thumb"
                           max-width="380"
@@ -32,7 +32,8 @@
                         ></v-img>
                         <div>
                           <v-card-title class="text-h6">
-                            {{ produto.title }} - {{ produto.normalPrice }} -
+                            {{ produto.title }} -
+                            <s> R${{ produto.normalPrice }}</s> -
                             {{ produto.salePrice }}
                           </v-card-title>
                         </div>
@@ -111,6 +112,20 @@ export default {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   color: aliceblue;
+}
+.v-card {
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  background: #0b1641;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 380px;
+  height: 251px;
+
+  color: azure;
 }
 .btn-margin {
   margin: auto !important;
