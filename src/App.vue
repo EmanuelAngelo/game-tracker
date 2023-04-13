@@ -33,8 +33,9 @@
                         <div>
                           <v-card-title class="text-h6">
                             {{ produto.title }} -
-                            <s> R${{ produto.normalPrice }}</s> -
-                            {{ produto.salePrice }}
+                            <s> ${{ produto.normalPrice }}</s> - ${{
+                              produto.salePrice
+                            }}
                           </v-card-title>
                         </div>
                       </v-card>
