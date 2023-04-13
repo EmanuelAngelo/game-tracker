@@ -1,24 +1,17 @@
-# game-tracker
+# Game Tracker
 
-## Project setup
-```
-npm install
-```
+Projeto proposto como desafio de entrevista tecnica.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+| :placard: O Desafio |     |
+| -------------  | --- |
+| :sparkles: Nome        | **Game Tracker**
+| :label: Tecnologias | html, css, vuejs, vuetify, javascript
+| :rocket: URL         | https://url-deploy.com.br
+| :fire: Desafio     | https://www.figma.com/file/1OChnhd0T3HQdGP1TWHNbX/Game-Tracker-Prot%C3%B3tipo?node-id=0-1&t=YAtZGbxJ1lXAsrFW-0
 
-### Compiles and minifies for production
-```
-npm run build
-```
+<!-- Inserir imagem com a #vitrinedev ao final do link -->
+![image](https://user-images.githubusercontent.com/23459929/231747000-72849494-0a80-4c65-bbe1-ebe650151506.png#vitrinedev)
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Detalhes do projeto
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+O desafio proposto para este projeto foi desenvolver uma loja de jogos utilizando Vue.js, HTML, CSS e JavaScript, sem limitação do uso de algum framework específico. A característica principal deste projeto é a utilização de uma API dos jogos da Steam. O projeto foi bem detalhado e organizado em seu template, com uma arquitetura clara e de fácil compreensão.
