@@ -11,7 +11,7 @@
           <v-row>
             <template>
               <v-col :key="n" class="mt-2" cols="12" style="color: aliceblue">
-                <strong>Ofertas</strong>
+                Ofertas
                 <ProcurarDescontos />
               </v-col>
               <v-container class="fill-height" fluid style="min-height: 434px">
