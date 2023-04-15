@@ -11,7 +11,13 @@
       </v-col>
 
       <v-col class="d-flex" cols="12" sm="2">
-        <v-select :items="items" label="Desconto" dense solo></v-select>
+        <v-select
+          :items="items"
+          label="Desconto"
+          dense
+          solo
+          @change="$emit('change', $event)"
+        ></v-select>
       </v-col>
     </v-row>
   </v-container>

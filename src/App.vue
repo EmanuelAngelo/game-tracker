@@ -12,13 +12,16 @@
             <template>
               <v-col :key="n" class="mt-2" cols="12" style="color: aliceblue">
                 Ofertas
-                <ProcurarDescontos @input="handleFilterTextChange" />
+                <ProcurarDescontos
+                  @input="handleFilterTextChange"
+                  @change="handlerFilterSelectChange"
+                />
               </v-col>
               <v-container class="fill-height" fluid style="min-height: 434px">
                 <v-fade-transition mode="out-in">
                   <v-row>
                     <v-col
-                      v-for="produto in produtosFiltradosEmExibicao"
+                      v-for="produto in produtos"
                       :key="produto.storeID"
                       cols="6"
                       md="4"
@@ -36,6 +39,7 @@
                             <s> ${{ produto.normalPrice }}</s> - ${{
                               produto.salePrice
                             }}
+                            <span>{{ calcularDesconto(produto.savings) }}</span>
                           </v-card-title>
                         </div>
                       </v-card>
@@ -51,7 +55,7 @@
                   :loading="loading"
                   :disabled="loading"
                   color="secondary"
-                  @click="loader = 'loading'"
+                  @click="handlerButtonClick"
                   >Carregar mais
                 </v-btn>
               </v-row>
@@ -76,20 +80,80 @@ export default {
       loader: null,
       loading: false,
       produtos: [],
-      produtosFiltradosEmExibicao: [],
+      qtdProdutosNaLista: 9,
+      filtroTexto: "",
+      ordem: 0,
+      ordenarPor: "Savings",
     };
   },
+
+  mounted() {
+    this.atualizarListaProdutos("", "");
+  },
+
   methods: {
+    atualizarListaProdutos() {
+      Produtos.listar(
+        this.ordenarPor,
+        this.ordem,
+        this.filtroTexto,
+        this.qtdProdutosNaLista
+      ).then((resposta) => {
+        console.log(resposta.data);
+        this.produtos = resposta.data;
+      });
+    },
+    handlerButtonClick() {
+      const incremento = 3;
+      this.qtdProdutosNaLista += incremento;
+      this.atualizarListaProdutos();
+    },
     handleFilterTextChange(event) {
-      const filtro = event.toLowerCase();
-      if (event.lenght == 0) {
-        this.produtosFiltradosEmExibicao = this.produtos;
-      } else {
-        this.produtosFiltradosEmExibicao = this.produtos.filter((produto) => {
-          const tituloProduto = produto.title.toLowerCase();
-          return tituloProduto.includes(filtro);
-        });
+      this.filtroTexto = event;
+      this.atualizarListaProdutos();
+    },
+    handlerFilterSelectChange(event) {
+      console.log(event);
+      switch (event) {
+        case "% de Desconto":
+          this.ordenarPor = "Savings";
+          this.ordem = 0;
+          break;
+        case "Menor preço":
+          this.ordenarPor = "Price";
+          this.ordem = 0;
+          break;
+        case "Maior preço":
+          this.ordenarPor = "Price";
+          this.ordem = 1;
+          break;
+        case "Título":
+          this.ordenarPor = "Title";
+          this.ordem = 0;
+          break;
       }
+      this.atualizarListaProdutos();
+    },
+    ordenarLista(lista, atributo, ordem) {
+      if (ordem === "asc") {
+        lista.sort((a, b) => (a[atributo] > b[atributo] ? 1 : -1));
+      } else if (ordem === "desc") {
+        lista.sort((a, b) => (a[atributo] < b[atributo] ? 1 : -1));
+      }
+      return lista;
+    },
+    calcularDesconto(desconto) {
+      const descontoInt = parseInt(desconto);
+      let descontoTexto = "";
+      switch (descontoInt) {
+        case 100:
+          descontoTexto = "GRÁTIS";
+          break;
+        default:
+          descontoTexto = `-${descontoInt}%`;
+          break;
+      }
+      return descontoTexto;
     },
   },
   watch: {
@@ -101,13 +165,6 @@ export default {
 
       this.loader = null;
     },
-  },
-  mounted() {
-    Produtos.listar().then((resposta) => {
-      console.log(resposta.data);
-      this.produtos = resposta.data;
-      this.produtosFiltradosEmExibicao = this.produtos;
-    });
   },
 
   components: { NavBar, ProcurarDescontos, FooterTracker },
