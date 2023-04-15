@@ -2,7 +2,12 @@
   <v-container fluid>
     <v-row align="center" justify="space-between">
       <v-col cols="12" sm="3" md="3">
-        <v-text-field class="procurar" label="Procurar" outlined></v-text-field>
+        <v-text-field
+          class="procurar"
+          label="Procurar"
+          outlined
+          @input="$emit('input', $event)"
+        ></v-text-field>
       </v-col>
 
       <v-col class="d-flex" cols="12" sm="2">

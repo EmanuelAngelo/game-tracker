@@ -12,13 +12,13 @@
             <template>
               <v-col :key="n" class="mt-2" cols="12" style="color: aliceblue">
                 Ofertas
-                <ProcurarDescontos />
+                <ProcurarDescontos @input="handleFilterTextChange" />
               </v-col>
               <v-container class="fill-height" fluid style="min-height: 434px">
                 <v-fade-transition mode="out-in">
                   <v-row>
                     <v-col
-                      v-for="produto of produtos"
+                      v-for="produto in produtosFiltradosEmExibicao"
                       :key="produto.storeID"
                       cols="6"
                       md="4"
@@ -76,7 +76,21 @@ export default {
       loader: null,
       loading: false,
       produtos: [],
+      produtosFiltradosEmExibicao: [],
     };
+  },
+  methods: {
+    handleFilterTextChange(event) {
+      const filtro = event.toLowerCase();
+      if (event.lenght == 0) {
+        this.produtosFiltradosEmExibicao = this.produtos;
+      } else {
+        this.produtosFiltradosEmExibicao = this.produtos.filter((produto) => {
+          const tituloProduto = produto.title.toLowerCase();
+          return tituloProduto.includes(filtro);
+        });
+      }
+    },
   },
   watch: {
     loader() {
@@ -92,6 +106,7 @@ export default {
     Produtos.listar().then((resposta) => {
       console.log(resposta.data);
       this.produtos = resposta.data;
+      this.produtosFiltradosEmExibicao = this.produtos;
     });
   },
 
