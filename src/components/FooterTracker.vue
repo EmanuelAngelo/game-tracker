@@ -1,15 +1,7 @@
 <template>
-  <v-footer dark padless>
+  <v-footer padless style="background: #0b1641">
     <v-card flat tile class="lighten-1 white--text text-center">
-      <v-card-text>
-        <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
-          <v-icon size="24px">
-            {{ icon }}
-          </v-icon>
-        </v-btn>
-      </v-card-text>
-
-      <v-card-text class="white--text pt-0">
+      <v-card-text class="white--text format pt-0" style="background: #0b1641">
         © 2023, Game Tracker Inc. Todos os direitos reservados. Nulla facilisi.
         Etiam sagittis congue tempor. Pellentesque habitant morbi tristique
         senectus et netus et malesuada fames ac turpis egestas. Suspendisse eu
@@ -19,10 +11,14 @@
         tellus malesuada turpis gravida cursus. Duis nec eleifend nunc, vitae
         finibus elit. Aliquam eget diam vitae purus suscipit viverra.
       </v-card-text>
-
-      <v-divider></v-divider>
-
-      <v-card-text class="white--text">
+      <v-card-text style="background: #0b1641">
+        <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
+          <v-icon size="24px">
+            {{ icon }}
+          </v-icon>
+        </v-btn>
+      </v-card-text>
+      <v-card-text class="white--text" style="background: #0b1641">
         {{ new Date().getFullYear() }} — <strong>Emanuel Angelo</strong>
       </v-card-text>
     </v-card>
@@ -41,11 +37,13 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
 .white--text {
+  top: 40.51%;
   font-family: "Roboto" !important;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 180%;
   /* or 25px */
+  text-align: justify;
 }
 </style>
