@@ -2,15 +2,11 @@
   <div>
     <v-app id="inspire">
       <NavBar />
-      <v-navigation-drawer v-model="drawer" fixed temporary>
-        <!--  -->
-      </v-navigation-drawer>
-
       <v-main class="fundo lighten-2">
         <v-container>
           <v-row>
             <template>
-              <v-col :key="n" class="mt-2" cols="12" style="color: aliceblue">
+              <v-col class="mt-2" cols="12" style="color: aliceblue">
                 Ofertas
                 <ProcurarDescontos
                   @input="handleFilterTextChange"
