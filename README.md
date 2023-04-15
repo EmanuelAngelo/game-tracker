@@ -2,11 +2,11 @@
 
 Projeto proposto como desafio de entrevista tecnica.
 
-| 👨🏻‍💻 O Desafio      |                                                                                                                |
+| 👨🏻‍💻 O Desafio        |                                                                                                                |
 | ------------------- | -------------------------------------------------------------------------------------------------------------- |
 | :sparkles: Nome     | **Game Tracker**                                                                                               |
 | :label: Tecnologias | html, css, vuejs, vuetify, javascript                                                                          |
-| :rocket: URL        | https://url-deploy.com.br                                                                                      |
+| :rocket: URL        | https://game-tracker-nine.vercel.app/br                                                                        |
 | :fire: Desafio      | https://www.figma.com/file/1OChnhd0T3HQdGP1TWHNbX/Game-Tracker-Prot%C3%B3tipo?node-id=0-1&t=YAtZGbxJ1lXAsrFW-0 |
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
@@ -19,7 +19,7 @@ O desafio proposto para este projeto foi desenvolver uma loja de jogos utilizand
 
 ## Detalhes para baixar e iniciar projeto
 
-| Command | Description |
-| --- | --- |
-| npm install | Comando para instalar as dependências do projeto |
-| npm run serve | Comando para iniciar o projeto |
+| Command       | Description                                      |
+| ------------- | ------------------------------------------------ |
+| npm install   | Comando para instalar as dependências do projeto |
+| npm run serve | Comando para iniciar o projeto                   |
