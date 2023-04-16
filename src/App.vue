@@ -18,27 +18,43 @@
                   <v-row>
                     <v-col
                       v-for="produto in produtos"
-                      :key="produto.storeID"
+                      :key="produto.gameID"
                       cols="6"
-                      md="4"
+                      lg="4"
                     >
-                      <v-card class="v-card">
-                        <v-img
-                          :src="produto.thumb"
-                          max-width="380"
-                          max-height="147"
-                          class="darken-4"
-                        ></v-img>
-                        <div>
-                          <v-card-title class="text-h6">
-                            {{ produto.title }} -
-                            <s> ${{ produto.normalPrice }}</s> - ${{
-                              produto.salePrice
-                            }}
-                            <span>{{ calcularDesconto(produto.savings) }}</span>
+                      <div class="card-wrapper">
+                        <v-card class="card">
+                          <v-img
+                            :src="produto.thumb"
+                            max-width="380"
+                            max-height="147"
+                          ></v-img>
+                          <v-card-title class="text-h5">
+                            {{ produto.title }}
+                            <!-- <v-btn text class="ml-2">DETALHES</v-btn> -->
                           </v-card-title>
-                        </div>
-                      </v-card>
+                          <v-card-text>
+                            <s>{{ produto.normalPrice }}</s>
+                            <span class="sale-price">{{
+                              produto.salePrice
+                            }}</span>
+                          </v-card-text>
+                          <v-card-actions class="actions">
+                            <v-btn text color="white" class="ml-auto">
+                              DETALHES
+                            </v-btn>
+                            <v-spacer />
+                            <v-btn
+                              width="84px"
+                              height="39px"
+                              border="8px"
+                              class="mr-2 mr"
+                            >
+                              {{ calcularDesconto(produto.savings) }}
+                            </v-btn>
+                          </v-card-actions>
+                        </v-card>
+                      </div>
                     </v-col>
                   </v-row>
                 </v-fade-transition>
@@ -95,7 +111,6 @@ export default {
         this.filtroTexto,
         this.qtdProdutosNaLista
       ).then((resposta) => {
-        console.log(resposta.data);
         this.produtos = resposta.data;
       });
     },
@@ -109,7 +124,6 @@ export default {
       this.atualizarListaProdutos();
     },
     handlerFilterSelectChange(event) {
-      console.log(event);
       switch (event) {
         case "% de Desconto":
           this.ordenarPor = "Savings";
@@ -181,6 +195,7 @@ export default {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   color: aliceblue;
+  width: 100%;
 }
 .v-card {
   left: 0%;
@@ -200,40 +215,78 @@ export default {
   margin: auto !important;
 }
 
-.custom-loader {
-  animation: loader 1s infinite;
+/**/
+.card-wrapper {
   display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
-@-moz-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.sale-price {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+
+  text-align: right;
+  color: white;
 }
-@-webkit-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.actions {
+  padding: 10px 0;
 }
-@-o-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.btn-margin {
+  margin-top: 20px;
 }
-@keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/**/
+
+.card {
+  height: 255px;
+  width: 380px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.card .v-card__title {
+  font-family: "Roboto", sans-serif;
+}
+
+.card .v-card__text > s {
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  text-decoration: line-through;
+}
+
+.card .v-card__text > .sale-price {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  margin-left: 8px;
+}
+
+.card .v-card__actions {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px;
+}
+.card .v-card__actions > .v-btn {
+  margin-left: 8px;
+}
+
+.card .details {
+  font-family: "Roboto", sans-serif;
+}
+
+.ml-auto {
+  background: #c70160;
+  border-radius: 8px;
 }
 </style>

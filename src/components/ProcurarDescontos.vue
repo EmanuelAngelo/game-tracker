@@ -24,38 +24,16 @@
 </template>
 
 <script>
-import { ref } from "vue";
-
 export default {
-  setup() {
-    const search_query = ref("");
-
-    return {
-      search_query,
-    };
-  },
-
   name: "ProcurarDescontos",
   data: () => ({
-    items: ["% de Desconto", "Menor preço", "Maior preço", "Título"],
+    items: ["% de Desconto", "Maior preço", "Menor preço", "Título"],
   }),
 };
 </script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
-.d-flex {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
-  /* identical to box height */
-  display: flex;
-  align-items: center;
-  text-align: right;
-  color: #ffffff;
-}
 .procurar {
   background: #0b1641;
   border-radius: 8px;
@@ -67,13 +45,17 @@ export default {
   font-weight: 100;
   font-size: 18px;
   line-height: 21px;
-  /* identical to box height */
-  color: #ffffff !important;
 }
-.desconto {
-  position: absolute;
-  background: #0b1641;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
+.d-flex {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #ffffff;
 }
 </style>

@@ -11,7 +11,6 @@ export default {
             onSale: 1,
             AAA: 1,
         }
-        console.log(sortBy, textFilter, qtdProdutosNaLista);
         const stringQueryParams = ObjToQueryParam(objQueryParams)
         return InstanciaAxios.get(`/deals${stringQueryParams}`)
     }
