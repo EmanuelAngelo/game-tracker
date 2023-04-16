@@ -22,36 +22,36 @@
                       cols="6"
                       lg="4"
                     >
-                      <div class="card-wrapper">
-                        <v-card class="card">
+                      <div>
+                        <v-card class="mx-auto v-card">
                           <v-img
+                            class="itemsImg"
                             :src="produto.thumb"
-                            max-width="380"
-                            max-height="147"
+                            height="120px"
                           ></v-img>
-                          <v-card-title class="text-h5">
-                            {{ produto.title }}
-                            <!-- <v-btn text class="ml-2">DETALHES</v-btn> -->
-                          </v-card-title>
-                          <v-card-text>
-                            <s>{{ produto.normalPrice }}</s>
-                            <span class="sale-price">{{
-                              produto.salePrice
-                            }}</span>
-                          </v-card-text>
-                          <v-card-actions class="actions">
-                            <v-btn text color="white" class="ml-auto">
-                              DETALHES
-                            </v-btn>
-                            <v-spacer />
-                            <v-btn
-                              width="84px"
-                              height="39px"
-                              border="8px"
-                              class="mr-2 mr"
-                            >
-                              {{ calcularDesconto(produto.savings) }}
-                            </v-btn>
+                          <div class="titulo">
+                            <v-card-title class="text-h5">
+                              {{ produto.title }}
+                            </v-card-title>
+                          </div>
+                          <v-card-actions>
+                            <div class="detalhes">
+                              <v-btn style="background: #c70160; color: white">
+                                DETALHES
+                              </v-btn>
+                            </div>
+                            <v-spacer></v-spacer>
+                            <div class="normalPrice">
+                              <s>$ {{ produto.normalPrice }}</s>
+                            </div>
+                            <div class="sale-price">
+                              <span>$ {{ produto.salePrice }} </span>
+                            </div>
+                            <div class="savings">
+                              <v-btn style="background: #16857b; color: white">
+                                {{ calcularDesconto(produto.savings) }}
+                              </v-btn>
+                            </div>
                           </v-card-actions>
                         </v-card>
                       </div>
@@ -193,100 +193,81 @@ export default {
 .itemsImg {
   background: #0b1641;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
+  border-radius: 8px 8px 0px 0px !important;
   color: aliceblue;
   width: 100%;
 }
 .v-card {
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-
+  max-width: 380px;
+  max-height: 290px !important;
   background: #0b1641;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
-  width: 380px;
-  height: 251px;
+  overflow: hidden; /* para esconder qualquer conteúdo que possa ultrapassar os limites do card */
 
-  color: azure;
+  /* definir a posição e o tamanho da imagem dentro do card */
+  position: relative;
 }
-.btn-margin {
-  margin: auto !important;
-}
+.normalPrice {
+  position: absolute;
+  left: 58.16%;
+  right: 30%;
+  top: 79.68%;
+  bottom: 14.74%;
 
-/**/
-.card-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-
-.sale-price {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 14px;
   /* identical to box height */
 
   text-align: right;
-  color: white;
-}
+  text-decoration-line: line-through;
 
-.actions {
-  padding: 10px 0;
+  color: #ffffff;
 }
-
-.btn-margin {
-  margin-top: 20px;
-}
-/**/
-
-.card {
-  height: 255px;
-  width: 380px;
-  border-radius: 8px;
-  position: relative;
-}
-
-.card .v-card__title {
-  font-family: "Roboto", sans-serif;
-}
-
-.card .v-card__text > s {
-  font-size: 12px;
-  font-family: "Roboto", sans-serif;
-  text-decoration: line-through;
-}
-
-.card .v-card__text > .sale-price {
-  font-size: 18px;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
-  margin-left: 8px;
-}
-
-.card .v-card__actions {
+.sale-price {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 8px;
-}
-.card .v-card__actions > .v-btn {
-  margin-left: 8px;
-}
+  left: 57.63%;
+  right: 28.95%;
+  top: 85.26%;
+  bottom: 6.37%;
 
-.card .details {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: right;
+  color: #ffffff;
 }
-
-.ml-auto {
-  background: #c70160;
+.savings {
+  position: absolute;
+  left: 73.68%;
+  right: 4.21%;
+  top: 78.09%;
+  bottom: 6.37%;
   border-radius: 8px;
+}
+.detalhes {
+  position: absolute;
+  left: 4.21%;
+  right: 65.26%;
+  top: 78.09%;
+  bottom: 6.37%;
+}
+.titulo {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #ffffff;
+}
+.v-card__actions {
+  align-items: center;
+  display: flex;
+  padding: 21px;
 }
 </style>
