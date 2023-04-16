@@ -227,7 +227,6 @@ export default {
 .sale-price {
   position: absolute;
   left: 57.63%;
-  right: 28.95%;
   top: 85.26%;
   bottom: 6.37%;
 
@@ -240,7 +239,6 @@ export default {
 }
 .savings {
   position: absolute;
-  left: 73.68%;
   right: 4.21%;
   top: 78.09%;
   bottom: 6.37%;
@@ -248,7 +246,6 @@ export default {
 }
 .detalhes {
   position: absolute;
-  left: 4.21%;
   right: 65.26%;
   top: 78.09%;
   bottom: 6.37%;
