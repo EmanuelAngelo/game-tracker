@@ -243,6 +243,7 @@ export default {
   top: 78.09%;
   bottom: 6.37%;
   border-radius: 8px;
+  padding: 0 0px;
 }
 .detalhes {
   position: absolute;
