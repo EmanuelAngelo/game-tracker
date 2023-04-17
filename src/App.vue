@@ -22,8 +22,8 @@
                       cols="6"
                       lg="4"
                     >
-                      <div>
-                        <v-card class="mx-auto v-card">
+                      <div class="card-container">
+                        <v-card class="card">
                           <v-img
                             class="itemsImg"
                             :src="produto.thumb"
@@ -34,7 +34,7 @@
                               {{ produto.title }}
                             </v-card-title>
                           </div>
-                          <v-card-actions>
+                          <v-card-actions class="actions">
                             <div class="detalhes">
                               <v-btn style="background: #c70160; color: white">
                                 DETALHES
@@ -269,7 +269,13 @@ export default {
   line-height: 28px;
 
   color: #ffffff;
+  height: auto;
 }
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .v-card__actions {
   align-items: center;
   display: flex;
