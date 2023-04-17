@@ -1,6 +1,6 @@
 <template>
   <v-footer padless style="background: #0b1641">
-    <v-card flat tile class="lighten-1 white--text text-center">
+    <v-card>
       <v-card-text class="white--text format pt-0" style="background: #0b1641">
         © 2023, Game Tracker Inc. Todos os direitos reservados. Nulla facilisi.
         Etiam sagittis congue tempor. Pellentesque habitant morbi tristique
@@ -12,10 +12,10 @@
         finibus elit. Aliquam eget diam vitae purus suscipit viverra.
       </v-card-text>
       <v-card-text style="background: #0b1641">
-        <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
-          <v-icon size="24px">
+        <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" text>
+          <v-card-title class="titulos-footer">
             {{ icon }}
-          </v-icon>
+          </v-card-title>
         </v-btn>
       </v-card-text>
       <v-card-text class="white--text" style="background: #0b1641">
@@ -29,7 +29,12 @@
 export default {
   name: "FooterTracker",
   data: () => ({
-    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+    icons: [
+      "Termos de Serviço",
+      "Política de Privacidade",
+      "Política de Privacidade",
+      "Política de Privacidade",
+    ],
   }),
 };
 </script>
@@ -45,5 +50,16 @@ export default {
   line-height: 180%;
   /* or 25px */
   text-align: justify;
+  text-transform: capitalize;
+}
+.titulos-footer {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 180%;
+  /* or 25px */
+  text-align: justify;
+  color: #ffffff;
 }
 </style>

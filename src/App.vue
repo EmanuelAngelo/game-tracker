@@ -60,7 +60,12 @@
                 </v-fade-transition>
               </v-container>
               <!-- Botão carregar mais -->
-              <v-row class="btn-margin" align="center" justify="center">
+              <v-row
+                class="btn-margin"
+                align="center"
+                justify="center"
+                style="padding: 10px"
+              >
                 <v-btn
                   class="ma-3"
                   rounded
@@ -198,6 +203,11 @@ export default {
   width: 100%;
 }
 .v-card {
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
   max-width: 380px;
   max-height: 290px !important;
   background: #0b1641;
