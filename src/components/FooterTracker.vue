@@ -50,7 +50,6 @@ export default {
   line-height: 180%;
   /* or 25px */
   text-align: justify;
-  text-transform: capitalize;
 }
 .titulos-footer {
   font-family: "Roboto";
@@ -61,5 +60,6 @@ export default {
   /* or 25px */
   text-align: justify;
   color: #ffffff;
+  text-transform: capitalize;
 }
 </style>
