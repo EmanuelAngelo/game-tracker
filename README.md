@@ -21,5 +21,6 @@ O desafio proposto para este projeto foi desenvolver uma loja de jogos utilizand
 
 | Command       | Description                                      |
 | ------------- | ------------------------------------------------ |
+| git clone   | Clone o projeto na sua maquina |
 | npm install   | Comando para instalar as dependências do projeto |
 | npm run serve | Comando para iniciar o projeto                   |
