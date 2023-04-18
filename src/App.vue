@@ -19,7 +19,7 @@
                     <v-col
                       v-for="produto in produtos"
                       :key="produto.gameID"
-                      cols="6"
+                      cols="12"
                       lg="4"
                     >
                       <div class="card-container">
@@ -280,5 +280,10 @@ export default {
   align-items: center;
   display: flex;
   padding: 21px;
+}
+@media (min-width: 960px) {
+  .card {
+    max-width: none;
+  }
 }
 </style>
