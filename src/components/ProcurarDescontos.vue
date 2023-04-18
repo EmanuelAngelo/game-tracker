@@ -3,6 +3,7 @@
     <v-row align="center" justify="space-between">
       <v-col cols="12" sm="3" md="3">
         <v-text-field
+          dark
           class="procurar"
           label="Procurar"
           outlined
