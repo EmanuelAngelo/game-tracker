@@ -10,9 +10,9 @@
         ></v-text-field>
       </v-col>
 
-      <v-col class="d-flex" cols="12" sm="2">
-        <div></div>
-        <div>
+      <v-col class="d-flex" cols="12" sm="auto">
+        <div class="ordenar-por">Ordenar por:</div>
+        <div class="select-wrapper">
           <v-select
             :items="items"
             label="% de Desconto"
@@ -60,5 +60,34 @@ export default {
   align-items: center;
   text-align: right;
   color: #ffffff;
+}
+.ordenar-por {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  margin-left: 20px;
+}
+
+.select-wrapper {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ordenar-por,
+  .select-wrapper {
+    display: block;
+    text-align: center;
+  }
+
+  .ordenar-por {
+    margin-bottom: 10px;
+  }
 }
 </style>
