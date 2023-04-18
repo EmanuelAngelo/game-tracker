@@ -1,7 +1,15 @@
 <template>
   <v-footer padless style="background: #0b1641">
-    <v-card>
-      <v-card-text class="white--text format pt-0" style="background: #0b1641">
+    <v-card style="background: #0b1641">
+      <v-img
+        alt="Descrição da imagem"
+        class="mx-auto logo"
+        src="../assets/Vector.png"
+      ></v-img>
+      <v-card-text
+        class="white--text format pt-0 mt-14"
+        style="background: #0b1641"
+      >
         © 2023, Game Tracker Inc. Todos os direitos reservados. Nulla facilisi.
         Etiam sagittis congue tempor. Pellentesque habitant morbi tristique
         senectus et netus et malesuada fames ac turpis egestas. Suspendisse eu
@@ -11,7 +19,7 @@
         tellus malesuada turpis gravida cursus. Duis nec eleifend nunc, vitae
         finibus elit. Aliquam eget diam vitae purus suscipit viverra.
       </v-card-text>
-      <v-card-text style="background: #0b1641">
+      <v-card-text class="text-center py-0" style="background: #0b1641">
         <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" text>
           <v-card-title class="titulos-footer">
             {{ icon }}
@@ -54,12 +62,21 @@ export default {
 .titulos-footer {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 700;
   font-size: 14px;
-  line-height: 180%;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
   /* or 25px */
   text-align: justify;
   color: #ffffff;
   text-transform: capitalize;
+}
+.logo {
+  position: absolute;
+  width: 24.63px;
+  height: 25px;
+  left: calc(50% - 24.63px / 2 + 0.31px);
+  top: 22px;
 }
 </style>
